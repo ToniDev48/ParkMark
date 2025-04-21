@@ -14,9 +14,9 @@ git clone https://github.com/ToniDev48/ParkMark.git
 Then you can run the app with this command:
 
 ```bash
-npm start
+npm run start
 ```
 
 ### Technologies
 
-This is is made with Capacitor, and Tailwindcss as UI Library. A few UI Components are taken from Tailwind Material.
+The app is made with Capacitor and Tailwindcss as UI Library. A few UI Components are taken from Tailwind Material.
