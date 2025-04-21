@@ -1,5 +1,7 @@
 ## ParkMark
 
+![alt text](./src/assets/logo/parkmarklogo.png)
+
 
 This is an app to find your vehicles. You can mark your parking place and get a route to your vehicle later. You can also share the vehicles with other people.
 
