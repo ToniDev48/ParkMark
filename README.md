@@ -1,12 +1,22 @@
-## Created with Capacitor Create App
+## ParkMark
 
-This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
-and comes with a very minimal shell for building an app.
 
-### Running this example
+This is an app to find your vehicles. You can mark your parking place and get a route to your vehicle later. You can also share the vehicles with other people.
 
-To run the provided example, you can use `npm start` command.
+### Clone the app
+
+You can clone this app by using this command: 
+```bash
+git clone https://github.com/ToniDev48/ParkMark.git
+```
+
+
+Then you can run the app with this command:
 
 ```bash
 npm start
 ```
+
+### Technologies
+
+This is is made with Capacitor, and Tailwindcss as UI Library. A few UI Components are taken from Tailwind Material.
