@@ -54,17 +54,24 @@ function renderItems() {
                     </iframe>
                 </div>
                 <div class="mt-[10px]">
-                    <button data-id="${item.id}" class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
+                    <button data-id="${item.id}" class="mark-button h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
                         Mark parking place here
                     </button>
                     <button data-id="${item.id}" class="edit-button h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
                       <img src="./assets/icons/edit.svg" alt="">
                   </button>
+                   <button data-id="${item.id}" class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-red-600 border-0 text-button-font hover:bg-red-900">
+                      <img src="./assets/icons/delete.svg" alt="">
+                  </button>
+                  
                 </div>
             </div>`;
    });
 
    const editButton = document.querySelectorAll('.edit-button');
+   const markButton = document.querySelectorAll('.mark-button');
+   
+   
 
    editButton.forEach(button => {
     button.addEventListener('click', function() {
@@ -79,6 +86,31 @@ function renderItems() {
         
     });
 });
+
+
+markButton.forEach(button => {
+    button.addEventListener('click', function() {
+     let dataId = button.getAttribute('data-id');
+     let item = data.find(obj => obj.id == dataId); 
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            if(item) {
+                item.position.latitude = latitude;
+                item.position.longitude = longitude;
+
+                localStorage.setItem('data', JSON.stringify(data));
+                renderItems();
+            }
+        }
+    );     
+    })
+})
+
+
+
 };
 
 
