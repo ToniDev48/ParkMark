@@ -1,0 +1,10 @@
+{
+  "appId": "com.antonmaxmittmann.parkmark",
+  "appName": "parkmark",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

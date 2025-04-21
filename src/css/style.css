@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+
+}
+
+@theme {
+  --color-header: rgba(245, 228, 33, 0.58);
+  --color-body: rgba(255, 245, 141, 0.72);
+  --color-card: rgba(255, 252, 218, 1);
+  --color-add-button: rgba(255, 232, 163, 1);
+  --color-settings-button: rgba(255, 255, 255, 1);
+  --color-edit-mark-button: rgba(236, 230, 240, 1);
+  --color-edit-mark-button-hover: rgba(181, 176, 184, 1);
+
+  --color-button-font: rgba(101, 85, 143, 1);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  @apply bg-body;
+}
+
+
+.item {
+  box-shadow: 0px 10px 16px -9px rgba(0,0,0,0.93);
+}

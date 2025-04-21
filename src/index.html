@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ParkMark</title>
+        <meta
+            name="viewport"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <script
+            type="module"
+            src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+        ></script>
+
+        <link rel="manifest" href="./manifest.json" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <header class="fixed top-0 left-0 right-0 bg-header w-[100%] flex justify-center items-center h-[70px] z-[1000]">
+            <h3 class="font-bold text-xl">Vehicles</h3>
+        </header>
+
+        <div class="flex justify-center items-center flex-col mt-[70px]">
+            <div class="bg-card h-[210px] w-[85%] p-[15px] rounded-2xl item mt-[30px] mb-[30px]">
+                <h1>Name</h1>
+                <div class="flex justify-center mt-[5px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2427.952248680024!2d13.375125075926306!3d52.51620323651161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDMwJzU4LjMiTiAxM8KwMjInMzkuNyJF!5e0!3m2!1sde!2sde!4v1745235515744!5m2!1sde!2sde"
+                        width="95%"
+                        height="100px"
+                        style="border-radius: 5px"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+                <div class="mt-[10px]">
+                    <button class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
+                        Mark parking place here
+                    </button>
+                    <button class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
+                      <img src="./assets/icons/edit.svg" alt="">
+                  </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
