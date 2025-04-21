@@ -1,12 +1,12 @@
 {
-  "name": "App",
-  "short_name": "App",
+  "name": "ParkMark",
+  "short_name": "ParkMark",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
     "src": "assets/logo/parkmarklogo.png",
     "type": "image/png"
   }],
-  "background_color": "#31d53d",
-  "theme_color": "#31d53d"
+  "background_color": "rgba(255, 245, 141, 0.72)"
+ 
 }

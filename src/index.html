@@ -27,39 +27,22 @@
             <h3 class="font-bold text-xl">Vehicles</h3>
         </header>
 
-        <div class="flex justify-center items-center flex-col mt-[70px]">
-            <div class="bg-card h-[210px] w-[85%] p-[15px] rounded-2xl item mt-[30px] mb-[30px]">
-                <h1>Name</h1>
-                <div class="flex justify-center mt-[5px]">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2427.952248680024!2d13.375125075926306!3d52.51620323651161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDMwJzU4LjMiTiAxM8KwMjInMzkuNyJF!5e0!3m2!1sde!2sde!4v1745235515744!5m2!1sde!2sde"
-                        width="95%"
-                        height="100px"
-                        style="border-radius: 5px"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
-                <div class="mt-[10px]">
-                    <button class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
-                        Mark parking place here
-                    </button>
-                    <button class="h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
-                      <img src="./assets/icons/edit.svg" alt="">
-                  </button>
-                </div>
-            </div>
+        <div id="item-container" class="flex justify-center items-center flex-col mt-[70px]">
+           
         </div>
 
 
         <div class="fixed right-[50px] bottom-[100px] flex flex-col items-center bg-add-settings-container p-[10px] rounded-2xl">
             <button class="mb-[10px] bg-settings-button rounded-full h-[35px] w-[35px] p-[5px] flex justify-center items-center cursor-pointer">
-                <img src="./assets/icons/settings.svg" alt="">
+                <img src="./assets/icons/settings.svg" alt="Settings Icon">
             </button>
-            <button class=" bg-add-button h-[60px] w-[60px] flex justify-center items-center rounded-2xl cursor-pointer add-button hover:bg-add-button-hover">
+            <button id="add-button" class=" bg-add-button h-[60px] w-[60px] flex justify-center items-center rounded-2xl cursor-pointer add-button hover:bg-add-button-hover">
                 <img src="./assets/icons/add.svg" alt="Add Icon">
             </button>
         </div>
+
+
+        <script src="./js/index.js"></script>
 
     </body>
 </html>
