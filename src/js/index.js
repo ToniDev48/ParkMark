@@ -40,7 +40,13 @@ function renderItems() {
     itemContainer.innerHTML = '';
     data.forEach(item => {
     itemContainer.innerHTML += `<div class="bg-card h-[220px] w-[85%] p-[15px] rounded-2xl item mt-[30px] mb-[30px]">
-                <h1>${item.name}</h1>
+                <div class="flex items-center justify-between ">
+                    <h1>${item.name}</h1>
+                     <button data-id="${item.id}" class="share-button h-[30px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-gray-400 border-0  hover:bg-gray-500">
+                      <img src="./assets/icons/share.svg" alt="">
+                  </button>
+                </div>
+               
                 <div class="flex justify-center mt-[5px]">
                     <iframe class="mt-[1px] rounded-sm "
                             width="90%"
@@ -63,6 +69,7 @@ function renderItems() {
                       <img src="./assets/icons/delete.svg" alt="">
                   </button>
                   
+                  
                 </div>
             </div>`;
    });
@@ -70,6 +77,7 @@ function renderItems() {
    const editButton = document.querySelectorAll('.edit-button');
    const markButton = document.querySelectorAll('.mark-button');
    const deleteButton = document.querySelectorAll('.delete-button');
+   const shareButton = document.querySelectorAll('.share-button');
 
    
    
@@ -118,6 +126,36 @@ deleteButton.forEach(button => {
         }
     });
 });
+
+
+shareButton.forEach(button => {
+    button.addEventListener('click', function () {
+        const dataId = parseInt(button.getAttribute('data-id')); 
+        const item = data.find(obj => obj.id == dataId); 
+        const sharedText = {
+            title: `Somebody has shared this vehicle with you: ${item.name}`,
+            text: 'The vehicle is here: ' + item.position.latitude + ', ' + item.position.longitude
+        }
+
+        navigator.share(sharedText);
+
+        localStorage.setItem('data', JSON.stringify(data)); 
+        renderItems(); 
+
+    });
+ 
+});
+
+
+
+
+
+  
+
+
+
+
+
 
 
 
