@@ -134,7 +134,7 @@ shareButton.forEach(button => {
         const item = data.find(obj => obj.id == dataId); 
         const sharedText = {
             title: `Somebody has shared this vehicle with you: ${item.name}`,
-            text: 'The vehicle is here: ' + item.position.latitude + ', ' + item.position.longitude
+            text: `The vehicle is here: https://www.google.com/maps?q=${item.position.longitude},${item.position.latitude}`
         }
 
         navigator.share(sharedText);
