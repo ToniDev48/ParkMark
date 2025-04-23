@@ -10,17 +10,9 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
 
-        <script
-            type="module"
-            src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
-        ></script>
-        <script
-            nomodule
-            src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
-        ></script>
-
         <link rel="manifest" href="./manifest.json" />
         <link rel="stylesheet" href="./css/style.css" />
+       
     </head>
     <body>
         <header class="fixed top-0 left-0 right-0 bg-header w-[100%] flex justify-center items-center h-[70px] z-[1000]">
@@ -32,7 +24,7 @@
         </div>
 
 
-        <div class="fixed right-[50px] bottom-[100px] flex flex-col items-center bg-add-settings-container p-[10px] rounded-2xl">
+        <div class="fixed right-[30px] bottom-[70px] flex flex-col items-center bg-add-settings-container p-[10px] rounded-2xl">
             <button class="mb-[10px] bg-settings-button rounded-full h-[35px] w-[35px] p-[5px] flex justify-center items-center cursor-pointer">
                 <img src="./assets/icons/settings.svg" alt="Settings Icon">
             </button>
@@ -42,7 +34,7 @@
         </div>
 
 
-        <script src="./js/index.js"></script>
-
+       
+        <script type="module"  src="./main.js"></script>
     </body>
 </html>
