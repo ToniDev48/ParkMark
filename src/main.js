@@ -17,10 +17,13 @@ let id = parseInt(localStorage.getItem('id')) || 0;
 addButton.addEventListener('click', function() {
     let name = prompt('Choose a name for your new vehicle:');
     if(name) {
-    if(name === '') {
-        alert('Please give your vehicle a name!');
-    } else {
+        if(name === '') {
+            alert('Please give your vehicle a name!');
+            return; 
+        }
+
         id += 1;
+
         let object = {
             name: name, 
             id: id,
@@ -28,19 +31,16 @@ addButton.addEventListener('click', function() {
                 latitude: null,
                 longitude: null
             }
-        }
-    }
+        };
 
-        alert(`${name} saved!`)
-        
+        alert(`${name} saved!`);
         data.push(object);
-        
         localStorage.setItem('data', JSON.stringify(data));
         localStorage.setItem('id', id.toString());
         renderItems();
-        
     }
 });
+
 
 
 function renderItems() {
