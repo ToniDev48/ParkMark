@@ -1,6 +1,11 @@
 const itemContainer = document.getElementById('item-container');
 const addButton = document.getElementById('add-button');
 
+import shareIcon from './assets/icons/share.svg';
+import editIcon from './assets/icons/edit.svg';
+import deleteIcon from './assets/icons/delete.svg';
+
+
 
 
 
@@ -11,6 +16,7 @@ let id = parseInt(localStorage.getItem('id')) || 0;
 
 addButton.addEventListener('click', function() {
     let name = prompt('Choose a name for your new vehicle:');
+    if(name) {
     if(name === '') {
         alert('Please give your vehicle a name!');
     } else {
@@ -22,7 +28,8 @@ addButton.addEventListener('click', function() {
                 latitude: null,
                 longitude: null
             }
-        };
+        }
+    }
 
         alert(`${name} saved!`)
         
@@ -43,7 +50,7 @@ function renderItems() {
                 <div class="flex items-center justify-between ">
                     <h1>${item.name}</h1>
                      <button data-id="${item.id}" class="share-button h-[30px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-gray-400 border-0  hover:bg-gray-500">
-                      <img src="./assets/icons/share.svg" alt="">
+                      <img src="${shareIcon}" alt="Share Icon">
                   </button>
                 </div>
                
@@ -63,10 +70,10 @@ function renderItems() {
                         Mark vehicle here
                     </button>
                     <button data-id="${item.id}" class="edit-button h-[40px]  inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-edit-mark-button border-0 text-button-font hover:bg-edit-mark-button-hover">
-                      <img  src="./assets/icons/edit.svg" alt="">
+                      <img  src="${editIcon}" alt="">
                   </button>
                    <button data-id="${item.id}" class="delete-button h-[40px] inline-flex items-center cursor-pointer justify-center border align-middle select-none font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none text-sm rounded-2xl py-2 px-4 shadow-sm hover:shadow-md bg-red-600 border-0 text-button-font hover:bg-red-900">
-                      <img src="./assets/icons/delete.svg" alt="">
+                      <img src="${deleteIcon}" alt="">
                   </button>
                   
                   
@@ -85,11 +92,13 @@ function renderItems() {
     button.addEventListener('click', function() {
         let dataId = button.getAttribute('data-id');
         let newName = prompt('Choose a new name!');
+        if(newName) {
         let item = data.find(obj => obj.id == dataId);
         if(item) {
             item.name = newName;
             localStorage.setItem('data', JSON.stringify(data)); 
             renderItems();
+        }
         }
     });
 });
