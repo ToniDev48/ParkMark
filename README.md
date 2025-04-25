@@ -5,7 +5,7 @@
 
 This is an app to find your vehicles. You can mark your parking place and get a route to your vehicle later. You can also share the vehicles with other people.
 
- You can find the web app here: [parkmarkapp.netlify.app](parkmarkapp.netlify.app)
+ You can find the web app here: https://parkmarkapp.netlify.app/
 
  To place it on your homescreen press the share button and then press "Add to homescreen".
 
